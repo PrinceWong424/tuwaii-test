@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: leaderboard-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    networks:
+      - leaderboard-network
+
+  redis:
+    image: redis:latest
+    container_name: leaderboard-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --requirepass password
+    networks:
+      - leaderboard-network
+
+volumes:
+  mongodb_data:
+  redis_data:
+
+networks:
+  leaderboard-network:
+    driver: bridge 

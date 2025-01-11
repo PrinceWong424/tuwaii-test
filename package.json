@@ -1,0 +1,25 @@
+{
+  "name": "leaderboard-system",
+  "version": "1.0.0",
+  "description": "实时游戏排行榜系统",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^5.0.1",
+    "mongoose": "^6.1.4",
+    "redis": "^4.0.1",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
