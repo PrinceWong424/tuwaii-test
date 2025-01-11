@@ -15,7 +15,8 @@ const wsService = new WebSocketService(leaderboardService);
 
 const app = express();
 const server = http.createServer(app);
-
+app.set('leaderboardService', leaderboardService);
+app.set('wsService', wsService); 
 // 优化系统资源配置
 process.setMaxListeners(0); // 移除EventEmitter监听器数量限制
 require('events').EventEmitter.defaultMaxListeners = 0;
@@ -91,5 +92,3 @@ startServer().catch(error => {
     process.exit(1);
 });
 
-app.set('leaderboardService', leaderboardService);
-app.set('wsService', wsService); 

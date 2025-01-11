@@ -19,9 +19,7 @@ class LeaderboardController {
         success: true,
         message: '分数更新成功',
         data: {
-          oldRank: result.oldRank,
-          newRank: result.newRank,
-          scoreChange: result.scoreChange
+          rank: result.rank,
         }
       });
     } catch (error) {
